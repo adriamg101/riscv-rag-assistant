@@ -1,0 +1,107 @@
+[
+  {
+    "id": "h01",
+    "question": "Which instruction implements the SNEZ pseudoinstruction?",
+    "answerable": true,
+    "expected_section": "rv32#1-1-4-2-integer-register-register-instructions",
+    "must_contain": ["SLTU"]
+  },
+  {
+    "id": "h02",
+    "question": "How is a plain unconditional jump (J) encoded?",
+    "answerable": true,
+    "expected_section": "rv32#1-1-5-1-unconditional-jumps",
+    "must_contain": ["JAL", "x0"]
+  },
+  {
+    "id": "h03",
+    "question": "What is the opcode of AUIPC?",
+    "answerable": true,
+    "expected_section": "rv-32-64g#rv32-64g",
+    "must_contain": ["0010111"]
+  },
+  {
+    "id": "h04",
+    "question": "What are the funct3 and opcode values of SLTIU?",
+    "answerable": true,
+    "expected_section": "rv-32-64g#rv32-64g",
+    "must_contain": ["011", "0010011"]
+  },
+  {
+    "id": "h05",
+    "question": "What is the funct7 value of the SRA instruction?",
+    "answerable": true,
+    "expected_section": "rv-32-64g#rv32-64g",
+    "must_contain": ["0100000"]
+  },
+  {
+    "id": "h06",
+    "question": "In which bits of the I-immediate is the shift amount of SLLI encoded?",
+    "answerable": true,
+    "expected_section": "rv32#1-1-4-1-integer-register-immediate-instructions",
+    "must_contain": ["5"]
+  },
+  {
+    "id": "h07",
+    "question": "How does BGE differ from BGEU?",
+    "answerable": true,
+    "expected_section": "rv32#1-1-5-2-conditional-branches",
+    "must_contain": ["unsigned"]
+  },
+  {
+    "id": "h08",
+    "question": "How does LB extend the 8-bit value it loads?",
+    "answerable": true,
+    "expected_section": "rv32#ldst",
+    "must_contain": ["sign"]
+  },
+  {
+    "id": "h09",
+    "question": "What is the EBREAK instruction used for?",
+    "answerable": true,
+    "expected_section": "rv32#ecall-ebreak",
+    "must_contain": ["debugger"]
+  },
+  {
+    "id": "h10",
+    "question": "What does the abbreviation EEI stand for?",
+    "answerable": true,
+    "expected_section": "intro#risc-v-software-execution-environments-and-harts",
+    "must_contain": ["execution environment interface"]
+  },
+  {
+    "id": "h11",
+    "question": "What does the Zicond instruction CZERO.EQZ do?",
+    "answerable": false,
+    "expected_section": null,
+    "must_contain": []
+  },
+  {
+    "id": "h12",
+    "question": "What does the hypervisor instruction HLV.W do?",
+    "answerable": false,
+    "expected_section": null,
+    "must_contain": []
+  },
+  {
+    "id": "h13",
+    "question": "How many levels does the Sv48 page table have?",
+    "answerable": false,
+    "expected_section": null,
+    "must_contain": []
+  },
+  {
+    "id": "h14",
+    "question": "What does the SUM bit of the sstatus register control?",
+    "answerable": false,
+    "expected_section": null,
+    "must_contain": []
+  },
+  {
+    "id": "h15",
+    "question": "Which GCC -march string enables the Zbb extension?",
+    "answerable": false,
+    "expected_section": null,
+    "must_contain": []
+  }
+]

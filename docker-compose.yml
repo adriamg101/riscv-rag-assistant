@@ -1,0 +1,42 @@
+name: riscv-rag-assistant
+
+services:
+  api:
+    build: .
+    image: riscv-rag-assistant
+    env_file: .env
+    ports:
+      - "127.0.0.1:8000:8000"
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    volumes:
+      - chroma_data:/app/chroma_db
+      - hf_cache:/app/.cache/huggingface
+    healthcheck:
+      test:
+        - CMD
+        - python
+        - -c
+        - "import urllib.request; urllib.request.urlopen('http://localhost:8000/health')"
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 10m # the first start downloads the embedding model and builds the index
+
+  frontend:
+    image: riscv-rag-assistant
+    pull_policy: never # built by the api service
+    command: ["python", "-m", "frontend.app"]
+    environment:
+      API_URL: http://api:8000
+      GRADIO_SERVER_NAME: 0.0.0.0
+      GRADIO_ANALYTICS_ENABLED: "False"
+    ports:
+      - "127.0.0.1:7860:7860"
+    depends_on:
+      api:
+        condition: service_healthy
+
+volumes:
+  chroma_data:
+  hf_cache:
